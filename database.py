@@ -1,9 +1,7 @@
+import os
 import sqlite3
 
-DB_PATH = r"C:\Users\CAPACITI-JHB\OneDrive - UVU Africa\Desktop\ticket\tickets.db"
+DB_PATH = os.path.join(os.getcwd(), "tickets.db")
 
 def get_connection():
-    return sqlite3.connect(
-        f"file:{DB_PATH}?mode=ro",
-        uri=True
-    )
+    return sqlite3.connect(DB_PATH)
